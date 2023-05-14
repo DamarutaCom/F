@@ -1,0 +1,345 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import java.util.Scanner;
+
+// public class Main {
+//     private static Scanner sc = new Scanner(System.in);
+//     private static Mobil mobil = null;
+//     private static Lintasan lintasan = null;
+
+//     public static void main(String[] args) {
+//         menuUtama();
+//     }
+
+//     public static void menuUtama() {
+//         boolean benar = true;
+//         while (benar) {
+//             System.out.println("==================");
+//             System.out.println("MENU PERMAINAN:");
+//             System.out.println("1. Ganti Mobil");
+//             System.out.println("2. Pilih Lintasan");
+//             System.out.println("3. Ganti Roda");
+//             System.out.println("4. Mulai Balapan");
+//             System.out.println("5. Keluar Aplikasi");
+//             System.out.println("Sila pilih menu 1-5:");
+
+//             int pilihan = sc.nextInt();
+
+//             switch (pilihan) {
+//                 case 1:
+//                     gantiMobil();
+//                     break;
+//                 case 2:
+//                     pilihLintasan();
+//                     break;
+//                 case 3:
+//                     gantiRoda();
+//                     break;
+//                 case 4:
+//                     mulaiBalapan();
+//                     break;
+//                 case 5:
+//                     benar = false;
+//                     System.out.println("-----KELUAR APLIKASI-----");
+//                     break;
+//                 default:
+//                     System.out.println("tidak ada dalam menu! Sila pilih yang lain");
+//             }
+//         }
+//     }
+
+//     public static void gantiMobil() {
+//         boolean benar = true;
+//         while (benar) {
+//             System.out.println("----------------------");
+//             System.out.println("Default mobil adalah mobil balap");
+//             System.out.println("0. Mobil balap");
+//             System.out.println("1. Mobil offroad");
+//             System.out.println("2. Mobil keluarga");
+//             System.out.println("Pilih mobil:");
+
+//             int pilihan = sc.nextInt();
+
+//             switch (pilihan) {
+//                 case 0:
+//                     mobil = new MobilBalap(new Mesin(), new Roda("balap"));
+//                     System.out.println("anda memilih mobil balap");
+//                     benar = false;
+//                     break;
+//                 case 1:
+//                     mobil = new MobilOffroad(new Mesin(), new Roda("offroad"));
+//                     System.out.println("anda memilih mobil offroad");
+//                     benar = false;
+//                     break;
+//                 case 2:
+//                     mobil = new MobilKeluarga(new Mesin(), new Roda("Keluarga"));
+//                     System.out.println("anda memilih mobil keluarga");
+//                     benar = false;
+//                     break;
+//                 default:
+//                     System.out.println("tidak ada dalam menu! Sila pilih yang lain");
+//             }
+//         }
+//     }
+
+//     public static void pilihLintasan() {
+//         boolean benar = true;
+//         while (benar) {
+//             System.out.println("-----------------");
+//             System.out.println("PILIH LINTASAN:");
+//             System.out.println("1. Lintasan Offroad");
+//             System.out.println("2. Lintasan Aspal");
+//             System.out.println("Pilih lintasan:");
+
+//             int pilihan = sc.nextInt();
+//             int panjang;
+
+//             switch (pilihan) {
+//                 case 1:
+//                     System.out.println("Masukan panjang lintasan (dalam km)!");
+//                     panjang = sc.nextInt();
+//                     lintasan = new Lintasan(panjang, "offroad");
+//                     System.out.println(
+//                             "anda memilih : Lintasan [panjangLintasan=" + panjang + ", jenisLintasan=offroad]");
+//                     benar = false;
+//                     break;
+//                 case 2:
+//                     System.out.println("Masukan panjang lintasan (dalam km)!");
+//                     panjang = sc.nextInt();
+//                     lintasan = new Lintasan(panjang, "aspal");
+//                     System.out
+//                             .println("anda memilih : Lintasan [panjangLintasan=" + panjang + ", jenisLintasan=aspal]");
+//                     benar = false;
+//                     break;
+//                 default:
+//                     System.out.println("tidak ada dalam menu! Sila pilih yang lain");
+//             }
+//         }
+//     }
+
+//     public static void gantiRoda() {
+//         boolean benar = true;
+//         while (benar) {
+//             System.out.println("-----------------");
+//             System.out.println("PILIH RODA:");
+//             System.out.println("1. Roda Offroad");
+//             System.out.println("2. Roda Aspal");
+//             System.out.println("Pilih roda:");
+
+//             int pilihan = sc.nextInt();
+
+//             switch (pilihan) {
+//                 case 1:
+//                     mobil.roda = new Roda("offroad");
+//                     System.out.println("Roda sudah diganti menjadi roda offroad");
+//                     benar = false;
+//                     break;
+//                 case 2:
+//                     mobil.roda = new Roda("aspal");
+//                     System.out.println("Roda sudah diganti menjadi roda aspal");
+//                     benar = false;
+//                     break;
+//                 default:
+//                     System.out.println("tidak ada dalam menu! Sila pilih yang lain");
+//             }
+//         }
+//     }
+
+//     public static void mulaiBalapan() {
+//         if (mobil == null) {
+//             System.out.println("Pilih mobil terlebih dahulu!");
+//             return;
+//         }
+//         if (lintasan == null) {
+//             System.out.println("Pilih lintasan terlebih dahulu!");
+//             return;
+//         }
+
+//         System.out.println("Data simulasi:");
+//         System.out.println("Data lintasan: Lintasan [panjangLintasan=" + lintasan.getPanjangLintasan()
+//                 + ", jenisLintasan=" + lintasan.getJenisLintasan() + "]");
+//         System.out.println("Mobil yang dipakai: Tipe Mobil= " + mobil.getTipe());
+//         System.out.println(" input kecepatan (dalam km/jam)");
+
+//         int kecepatan = sc.nextInt();
+
+//         Simulasi simulasi = new Simulasi(mobil, lintasan, kecepatan);
+//         simulasi.mulai();
+//     }
+// }
+
+// class Mesin {
+//     boolean isOn;
+
+//     void start() {
+//         isOn = true;
+//         System.out.println("mesin mobil menyala");
+//     }
+
+//     void stop() {
+//         isOn = false;
+//         System.out.println("mesin mobil mati");
+//     }
+// }
+
+// class Roda {
+//     String tipe;
+
+//     Roda(String tipe) {
+//         this.tipe = tipe;
+//     }
+
+//     void berputar() {
+//         System.out.println("Roda " + tipe + " berputar");
+//     }
+// }
+
+// abstract class Mobil {
+//     Mesin mesin;
+//     Roda roda;
+//     String tipe;
+
+//     Mobil(Mesin mesin, Roda roda, String tipe) {
+//         this.mesin = mesin;
+//         this.roda = roda;
+//         this.tipe = tipe;
+//     }
+
+//     void jalan() {
+//         mesin.start();
+//     }
+
+//     void berhenti() {
+//         mesin.stop();
+//     }
+
+//     String getTipe() {
+//         return tipe;
+//     }
+// }
+
+// class MobilBalap extends Mobil {
+//     MobilBalap(Mesin mesin, Roda roda) {
+//         super(mesin, roda, "mobil balap");
+//     }
+// }
+
+// class MobilKeluarga extends Mobil {
+//     MobilKeluarga(Mesin mesin, Roda roda) {
+//         super(mesin, roda, "mobil keluarga");
+//     }
+// }
+
+// class MobilOffroad extends Mobil {
+//     MobilOffroad(Mesin mesin, Roda roda) {
+//         super(mesin, roda, "mobil offroad");
+//     }
+// }
+
+// class Lintasan {
+//     int panjangLintasan;
+//     String jenisLintasan;
+
+//     Lintasan(int panjangLintasan, String jenisLintasan) {
+//         this.panjangLintasan = panjangLintasan;
+//         this.jenisLintasan = jenisLintasan;
+//     }
+
+//     int getPanjangLintasan() {
+//         return panjangLintasan;
+//     }
+
+//     String getJenisLintasan() {
+//         return jenisLintasan;
+//     }
+// }
+
+// class Simulasi {
+//     Mobil mobil;
+//     Lintasan lintasan;
+//     int kecepatan;
+
+//     Simulasi(Mobil mobil, Lintasan lintasan, int kecepatan) {
+//         this.mobil = mobil;
+//         this.lintasan = lintasan;
+//         this.kecepatan = kecepatan;
+//     }
+
+//     void mulai() {
+//         mobil.jalan();
+//         System.out.println(mobil.getTipe() + " berjalan, Roda " + mobil.roda.tipe + " berputar");
+
+//         double waktuTempuh = lintasan.getPanjangLintasan() / (double) kecepatan;
+
+//         for (int i = 1; i <= waktuTempuh; i++) {
+//             System.out.println("mobil sudah menempuh " + i + " jam");
+//         }
+
+//         System.out.println(mobil.getTipe() + " berhenti, Roda " + mobil.roda.tipe + " berhenti berputar");
+
+//         System.out.println("waktu tempuh mobil pada lintasan adalah: " + waktuTempuh + " jam");
+//         mobil.berhenti();
+//     }
+// }
