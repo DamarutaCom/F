@@ -30,38 +30,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import java.util.Scanner;
 
 // public class Main {
@@ -221,26 +189,26 @@
 //         System.out.println("Data lintasan: Lintasan [panjangLintasan=" + lintasan.getPanjangLintasan()
 //                 + ", jenisLintasan=" + lintasan.getJenisLintasan() + "]");
 //         System.out.println("Mobil yang dipakai: Tipe Mobil= " + mobil.getTipe());
-//         System.out.println(" input kecepatan (dalam km/jam)");
+//         System.out.println("Input kecepatan (dalam km/jam)");
 
 //         int kecepatan = sc.nextInt();
 
 //         Simulasi simulasi = new Simulasi(mobil, lintasan, kecepatan);
-//         simulasi.mulai();
+//         System.out.println(simulasi.mulai());
 //     }
 // }
 
 // class Mesin {
 //     boolean isOn;
 
-//     void start() {
+//     String start() {
 //         isOn = true;
-//         System.out.println("mesin mobil menyala");
+//         return "Mesin mobil menyala";
 //     }
 
-//     void stop() {
+//     String stop() {
 //         isOn = false;
-//         System.out.println("mesin mobil mati");
+//         return "Mesin mobil mati";
 //     }
 // }
 
@@ -251,8 +219,8 @@
 //         this.tipe = tipe;
 //     }
 
-//     void berputar() {
-//         System.out.println("Roda " + tipe + " berputar");
+//     String berputar() {
+//         return "Roda " + tipe + " berputar";
 //     }
 // }
 
@@ -267,12 +235,12 @@
 //         this.tipe = tipe;
 //     }
 
-//     void jalan() {
-//         mesin.start();
+//     String jalan() {
+//         return mesin.start();
 //     }
 
-//     void berhenti() {
-//         mesin.stop();
+//     String berhenti() {
+//         return mesin.stop();
 //     }
 
 //     String getTipe() {
@@ -327,19 +295,21 @@
 //         this.kecepatan = kecepatan;
 //     }
 
-//     void mulai() {
-//         mobil.jalan();
-//         System.out.println(mobil.getTipe() + " berjalan, Roda " + mobil.roda.tipe + " berputar");
+//     String mulai() {
+//         String output = "";
+//         output += mobil.jalan();
+//         output += "\n" + mobil.getTipe() + " berjalan, Roda " + mobil.roda.tipe + " berputar";
 
 //         double waktuTempuh = lintasan.getPanjangLintasan() / (double) kecepatan;
 
 //         for (int i = 1; i <= waktuTempuh; i++) {
-//             System.out.println("mobil sudah menempuh " + i + " jam");
+//             output += "\n" + "Mobil sudah menempuh " + i + " jam";
 //         }
 
-//         System.out.println(mobil.getTipe() + " berhenti, Roda " + mobil.roda.tipe + " berhenti berputar");
+//         output += "\n" + mobil.getTipe() + " berhenti, Roda " + mobil.roda.tipe + " berhenti berputar";
+//         output += "\n" + "Waktu tempuh mobil pada lintasan adalah: " + waktuTempuh + " jam";
+//         output += "\n" + mobil.berhenti();
 
-//         System.out.println("waktu tempuh mobil pada lintasan adalah: " + waktuTempuh + " jam");
-//         mobil.berhenti();
+//         return output;
 //     }
 // }
